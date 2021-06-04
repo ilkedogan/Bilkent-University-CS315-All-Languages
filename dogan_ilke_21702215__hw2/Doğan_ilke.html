@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h1 style="font-size:2.6rem;">CS315 Programming Languages</h1>
+    <h2 style="font-size:2.1rem;">Homework 2</h2>
+    <h3 style="font-size:1.7rem;">Iteration Based on Data Structures in Javascript</h3>
+
+    <p id="results"></p>
+    <p id="subheading"></p>
+    <script>
+    /*
+       Investigating the statements for iteration based on data structures provided in six different programming languages: C, GO (Golang), Javascript, PHP, Python, and Rust. You will investigate how the following design issues are addressed in these programming languages:
+   
+       1. Iteration statements provided,
+       2. Data structures suitable for iteration,
+       3. The way the next item is accessed.
+   
+   */
+   
+   // PHP Language
+   /*
+       1.     Iteration statements provided
+   */
+      
+       // While Loop
+        var subheading  = "";       
+        subheading += " ֍֍֍֍֍֍֍֍֍֍֍   1. ITERATION STATEMENTS   ֍֍֍֍֍֍֍֍֍֍֍<br><br> ☯ WHILE LOOP IN JAVASCRIPT ☯ <br>"
+        x = 1
+        var boolvar = true;
+        while( boolvar ){
+            if( x == 6 ){
+                boolvar = false
+                subheading += " Reached  '6'<br>"
+                break 
+            }
+            x = x + 1
+            subheading += " Print Until Finding '6' and now the value is: " + x + "<br>"
+        }
+        // For Loop
+        subheading += "<br> ☯ FOR LOOP IN JAVASCRIPT ☯ <br>"
+        i = 0;
+        for( i= 0; i < 11 ; i++){
+            if( i == 6 ){
+                subheading += " Reached  '6'<br>"
+            }
+            subheading += " Print Until Finding '6' and now the value is: " + i + "<br>"
+        }        
+
+        // Do-While Loop
+        subheading += " <br> ☯ DO-WHILE LOOP IN JAVASCRIPT ☯ <br>"
+        k = 0;
+        do{
+            k += 2;
+            subheading +="Print Until Finding '16' for "+ k + " times increment by 2 <br>"
+        } while( k < 17 );        
+        
+
+        // for/in Loop
+                
+        subheading += "<br> ☯ FOR-IN LOOP IN JAVASCRIPT ☯<br>"
+    
+        var arrayNum = {day:22, month:06, year:1999};
+        var x;
+        for (x in arrayNum) {
+            subheading += "Print array: "+ arrayNum[x] + "<br>";
+        }
+        // for/of Loop
+                
+        subheading += "<br> ☯ FOR-OFF LOOP IN JAVASCRIPT ☯ <br>"
+        var birthday = ["22", "june", "1999"];
+        for (var x of birthday) {
+            subheading += "Print array: "+ x + "<br>";
+        }
+    /*
+    2.    Data structures suitable for iteration
+    */
+
+    subheading += "<br> ֍֍֍֍֍֍֍֍֍֍֍   2. DATA STRUCTURES FOR ITERATIONS   ֍֍֍֍֍֍֍֍֍֍<br>"
+
+    subheading += "<br> ☯ 1. ARRAY IN JAVASCRIPT ☯ <br>"
+    var arrayExample = [22, 06, 1999];
+    for( i= 0; i < 4 ; i++){        
+            subheading +=  i + ". element is: " + arrayExample[i] +" <br>";
+        }       
+    subheading += "Array length is: " + arrayExample.length +" <br>";
+    subheading += "<br> ☯ 2. SET IN JAVASCRIPT ☯ <br>"
+    let setExample = new Set()
+    for( i= 1; i < 10 ; i++){        
+            subheading +=  i + ". element is added <br>"
+            setExample.add(i)
+        }
+    subheading += "The set is created: [ " + [...setExample] +  "]<br><br>"  
+    x = 0
+    subheading +=" Checking availability of the elements in the set: <br>"
+    while ( x < 15){     
+        if( setExample.has(x) == true ){
+            subheading += x +" :)  is available <br>"
+        }
+        else{
+            subheading += x +" :(  not available <br>"
+        }
+        x+=2
+    }
+      
+    /*
+    3.     The way the next item is accessed
+    */
+
+    subheading += "<br> ֍֍֍֍֍֍֍֍֍֍֍֍֍֍ 3. REACHING THE NEXT ITEM  ֍֍֍֍֍֍֍֍֍֍֍֍<br>"
+    subheading += "<br> ☯ WHILE LOOP FOR NEXT ITEM TEST IN JAVASCRIPT ☯ <br>"
+    x = 0
+        while( x < 11  ){
+            if( x == 6 ){
+                subheading += " Reached  '6'<br>"
+                x += 2
+            }
+            subheading += "Turn " + x + " times<br>"
+            x = x + 1
+        }
+        subheading += " It should be printed 10 times if not next item related with what is written inside loop: " + x + "<br>"
+        // For Loop
+        subheading += "<br> ☯ FOR LOOP FOR NEXT ITEM TEST IN JAVASCRIPT ☯ <br>"
+        for( i= 0; i < 11 ; i++){
+            if( i == 6 ){
+                subheading += " Reached  '6'<br>"
+                x += 2
+            }
+            subheading += " Turn " + i + " times<br>"
+        }  
+        subheading += " It should be printed 10 times if not next item related with what is written inside loop: " + x + "<br>"    
+    const paragraph = document.querySelector("#subheading")
+    paragraph.innerHTML = subheading;
+
+    </script>
+    
+</body>
+</html>
+

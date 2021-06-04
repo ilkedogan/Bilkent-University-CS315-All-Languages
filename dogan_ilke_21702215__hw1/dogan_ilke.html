@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <h1 style="font-size:2.6rem;">CS315 Programming Languages</h1>
+    <h2 style="font-size:2.1rem;">Homework 1</h2>
+    <h3 style="font-size:1.7rem;">Boolean Expressions in Javascript</h3>
+
+    <p id="results"></p>
+    <p id="subheading"></p>
+    <script>
+    /*
+
+    Boolean Expressions in JavaScript in 6 different Category
+        1. Boolean operators provided
+        2. Data types for operands of boolean operators
+        3. Operator precedence rules
+        4. Operator associativity rules
+        5. Operand evaluation order
+        6. Short-circuit evaluation
+
+    */
+     /*
+
+     1. Boolean operators provided 
+            [ and, or, not]
+            is examined in part 2 (below this part)
+    */
+    // Variables
+        var boolTrue1   = true;
+        var boolTrue2   = true;
+        var boolTrue3   = true;
+        var boolFalse1  = false;
+        var boolFalse2  = false;
+        var boolFalse3  = false;
+        var boolvar     = true;
+        var subheading  = "";
+        
+        // [ 1.1 and oparator test ] 
+        
+        subheading += " *********   1. BOOLEAN OPERATORS TEST   *********<br><br>BOOLEAN OPERATORS: AND<br>"
+
+        boolvar = boolTrue1 && boolTrue2;
+        subheading += "Boolean test for True  - True and operator: " + boolvar +  "<br>"
+        boolvar = boolTrue1 && boolFalse1;
+        subheading += "Boolean test for True  - False and operator: " + boolvar +  "<br>"
+        
+
+        // [ 1.2 or  oparator test ] 
+        subheading += " BOOLEAN OPERATORS: OR<br>"
+        
+        boolvar = boolTrue1 || boolTrue2;
+        subheading += "Boolean test for True  - True or operator: " + boolvar +  "<br>"
+        boolvar = boolTrue1 || boolFalse1;
+        subheading += "Boolean test for True  - False or operator: " + boolvar +  "<br>"
+        
+
+        // [ 1.3 not oparator test ]
+        subheading += "BOOLEAN OPERATORS: AND/OR NOT<br>"
+
+        boolvar = !(boolTrue1 && boolTrue2);
+        subheading += "Boolean test for True  - True and not operator: " + boolvar +  "<br>"
+        boolvar = !(boolTrue1 && boolFalse1);
+        subheading += "Boolean test for True  - False and not operator: " + boolvar +  "<br><br>"
+    /*
+    2.  Data types for operands of boolean operators
+            [ and, or, not]
+
+    */
+    subheading += " *********   2. DATA TYPES FOR BOOLEAN OPERATORS *********<br><br>"
+    
+    intBool = 1
+    doubleBool = 0
+    floatBool = 1.2
+    // 1 for True
+    if (intBool){
+        subheading +="Boolean test for True = 1 is working<br>"
+    }
+    // 0 for True
+    if (intBool){
+        subheading +="Boolean test for False = 0 is working<br>"
+    }
+    // Float = 1.2 for True
+    if (floatBool){
+        subheading +="Boolean test for Float as boolean operator is working<br>"
+    }
+    if (boolTrue2){
+        subheading +="Boolean test for boolean variable for boolean operator is working<br><br>"
+    }
+    
+    /*
+      3.     Operator precedence rules
+
+        Precedence Rank
+        1:   ()        Parantheses 
+        2:   and        
+        3:   or  
+    */
+        subheading += " *********   3. BOOLEAN PRECEDENCE TEST   *********<br><br>BOOLEAN OPERATORS: 'AND' VERSUS 'OR': AND<br>"
+
+        boolvar = boolTrue1 && boolTrue2 || boolFalse1;
+        subheading += "Boolean test for True and True  or False condition: " + boolvar +  "<br>"
+        boolvar = boolTrue1 || boolTrue2 && boolFalse1;
+        subheading += "Boolean test for True or True  and False condition: " + boolvar +  "<br>" //# and has precedence compared to or 
+
+        subheading += " <br> BOOLEAN OPERATORS: 'AND' VERSUS 'Parantheses<br>"
+        boolvar = boolFalse1 && boolFalse2 || boolTrue1;
+        subheading += "Boolean test for True and True  or False condition: " + boolvar +  "<br>"
+        boolvar = boolFalse1 && (boolFalse2 || boolTrue1);
+        subheading += "Boolean test for True or True  and False condition: " + boolvar +  "<br><br>" //# '()' has precedence compared to and 
+
+    /*
+      4.     Operator associativity rules
+
+        Precedence Rank       Associativity
+        1:   ()            non associative
+        2:   NOT           right associativity
+        3:   AND           left associativity  
+        4:   OR            left associativity
+    */
+    subheading += " *********   4. OPERATOR ASSOCIATIVITY RULES   *********<br>"
+
+    name = "ilke";
+    favHobby = "space";
+
+    if ((favHobby == ' space' && favHobby == 'reading') || name == "ilke"){
+        subheading +="Left associativity is working<br><br>" //if it was right associativity, this line would work
+    }
+    else{
+        subheading +="Right associativity is working for and<br><br>"
+    }
+    if ((favHobby == ' space' || favHobby == 'reading')&& name == "ilke"){
+        subheading +="Right associativity is working for or<br><br>" 
+    }
+    else{
+        subheading +="Left associativity is working<br><br>" // if it was right associativity, this line would work
+    }
+    if ( !boolTrue2 || boolTrue3){
+        subheading +="'Not' has Right associativity<br><br>" 
+    }
+    else{
+        subheading +="'Not' has Left associativity<br><br>" 
+    }
+
+    /*
+     5.     Operand evaluation order      
+    Aim is that the operands are from 
+    LEFT -> RIGHT
+    */
+    subheading += " *********   5. OPERAND EVALUATION ORDER   *********<br>"
+    
+    function myFunction1() {
+        boolvar = true;
+        subheading += "Inside Test Function 1 <br>";
+        return boolvar;            
+    }   
+    function myFunction2() {
+        boolvar = false;
+        subheading += "Inside Test Function 2 <br>";
+        return boolvar;             
+    }   
+
+    function myFunction3() {
+        boolvar = true;
+        subheading += "Inside Test Function 3 <br>";
+        return boolvar;             
+    }  
+
+    function myFunction4() {
+        boolvar = false;
+        subheading += "Inside Test Function 4 <br>";
+        return boolvar;             
+    }   
+    // #  Prove operands work LEFT -> RIGHT
+    boolvar = myFunction1() && myFunction2() && myFunction3() && myFunction4();
+    subheading += "Function-1 and Function-2 and Function-3 and Function-4: " + boolvar + "<br>"
+
+    boolvar = myFunction1() || myFunction2() || myFunction3() || myFunction4();
+    subheading += "Function-1 or Function-2 or Function-3 or Function-4: " + boolvar + "<br><br>" 
+
+    /*
+     6.     Short-circuit evaluation
+    */
+
+    subheading += " *********   6. SHORT - CIRCUIT EVALUATION   *********<br>"
+    if ( myFunction1() || myFunction2()){
+        subheading += "Short-circuit evaluation is working <br>" 
+    }
+
+
+    const paragraph = document.querySelector("#subheading")
+    paragraph.innerHTML = subheading;
+
+    </script>
+    
+</body>
+</html>
+
