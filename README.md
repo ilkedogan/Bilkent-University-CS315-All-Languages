@@ -1,5 +1,5 @@
 # CS315_All-Languages
-# ~ Programming Languages ~ Spring 2020/21
+# ~ Bilkent University Programming Languages ~ Spring 2020/21
 [Computer Engineering Department, Bilkent University](http://w3.cs.bilkent.edu.tr/en/).  
 
 ****
