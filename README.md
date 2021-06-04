@@ -22,5 +22,5 @@ structures. Subprograms. Abstract data types. Concurrency. Exception handling. F
 
 
 ****
-**Instructor:** [Halil Altay Güvenir] (http://www.cs.bilkent.edu.tr/~guvenir/). 
+**Instructor:** [Halil Altay Güvenir](http://www.cs.bilkent.edu.tr/~guvenir/) 
 ****
