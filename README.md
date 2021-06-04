@@ -17,7 +17,7 @@ structures. Subprograms. Abstract data types. Concurrency. Exception handling. F
 + **Rust Language**
 + **Python Language**
 + **PHP Language**
-+ **Kttlin Language**
++ **Kotlin Language**
 + **JavaScript** 
 
 
